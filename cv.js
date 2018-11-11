@@ -28,7 +28,7 @@ form.addEventListener('submit', function(ev){
   let close = h3.innerHTML;
 
   h3.innerHTML = name + `<span>X</span>`;
-  
+
   // h3.innerText=name + h3.innerHTML;
   // handling date picker
   let date = inputs[1].value;
@@ -103,10 +103,10 @@ form.addEventListener('submit', function(ev){
 
   }
 
-  let spans = document.querySelectorAll('span');
+  let spans = document.querySelectorAll('h3 span');
 
-  for(let h3Count = 0; h3Count< spans.length; h3Count++){
-    spans[h3Count].addEventListener("click", removeCV);
+  for(let spansCount = 0; spansCount< spans.length; spansCount++){
+    spans[spansCount].addEventListener("click", removeCV);
   }
 
 
