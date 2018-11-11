@@ -37,6 +37,10 @@ form.addEventListener('submit', function(ev){
   let img2 = img.slice(index);
   console.log(img2);
 
+  let imgPreview = document.createElement('IMG');
+  imgPreview.src = img2;
+  section.appendChild(imgPreview);
+
   document.body.appendChild(section);
 
 })
