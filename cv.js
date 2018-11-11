@@ -29,6 +29,14 @@ form.addEventListener('submit', function(ev){
   p.innerText ='Born at ' + date;
   section.appendChild(p);
 
+  let img = inputs[2].value;
+  console.log(img);
+  console.log(img.lastIndexOf('\\'));
+  let index = img.lastIndexOf('\\')+1;
+  console.log(index);
+  let img2 = img.slice(index);
+  console.log(img2);
+
   document.body.appendChild(section);
 
 })
