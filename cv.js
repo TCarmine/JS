@@ -9,7 +9,7 @@ let inputs = document.querySelectorAll('fieldset > input');
 let tArea = document.querySelector('textarea');
 let liInputs = document.querySelectorAll('li  > input');
 let backgroundColor = document.querySelector('#primaryColor');
-
+let textColor = document.querySelector('#secondaryColor');
 
 form.addEventListener('submit', function(ev){
 
@@ -45,16 +45,19 @@ form.addEventListener('submit', function(ev){
   section.appendChild(imgPreview);
 
 
-  // article about person with selected color
-  let articleColor = backgroundColor.value;
+  // article about person with selected color for all section
+  let sectionColor = backgroundColor.value;
   let article = document.createElement('ARTICLE');
-  article.style.background=articleColor;
+  section.style.background=sectionColor;
 
   let textArea = tArea.value;
   article.innerText= textArea;
 
   section.appendChild(article);
 
+  //handling color for text
+  let textCV = textColor.value;
+  document.body.style.color = textCV;
 
   //handling languages checkboxs paragraph
   let p2 = document.createElement('P');
