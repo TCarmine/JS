@@ -25,6 +25,9 @@ form.addEventListener('submit', function(ev){
   h3.innerText=name;
   section.appendChild(h3);
 
+  //let close = document.createElement('SPAN');
+  h3.innerHTML = `<span>X</span>`;
+
   // handling date picker
   let date = inputs[1].value;
   let p = document.createElement('P');
@@ -84,10 +87,8 @@ form.addEventListener('submit', function(ev){
 
 
 
+
   // append the section to the root element-->body
-
-
-
   document.body.appendChild(section);
 
 })
