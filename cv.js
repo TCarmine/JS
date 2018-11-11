@@ -22,13 +22,14 @@ form.addEventListener('submit', function(ev){
   let h3 = document.createElement('H3');
 
   h3.style.marginBottom = '2vw';
-  h3.innerText=name;
+
   section.appendChild(h3);
 
   let close = h3.innerHTML;
 
-  h3.innerHTML = `<span>X</span>`;
-
+  h3.innerHTML = name + `<span>X</span>`;
+  
+  // h3.innerText=name + h3.innerHTML;
   // handling date picker
   let date = inputs[1].value;
   let p = document.createElement('P');
@@ -93,7 +94,7 @@ form.addEventListener('submit', function(ev){
 
   document.body.appendChild(section);
 
-  let removeCV = function removeCV() {
+  let removeCV = function (ev) {
       let target = ev.currentTarget,
       targetParent = target.parentElement;
       sec = document.querySelector('section');
@@ -102,7 +103,12 @@ form.addEventListener('submit', function(ev){
 
   }
 
-  h3.addEventListener("click", removeCV(ev));
+  let spans = document.querySelectorAll('span');
+
+  for(let h3Count = 0; h3Count< spans.length; h3Count++){
+    spans[h3Count].addEventListener("click", removeCV);
+  }
+
 
 
 
