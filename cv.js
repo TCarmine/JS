@@ -17,6 +17,7 @@ form.addEventListener('submit', function(ev){
   ev.preventDefault();
   let section = document.createElement('SECTION');
 
+  // handling name box
   let name = inputs[0].value;
   let h3 = document.createElement('H3');
 
@@ -24,11 +25,13 @@ form.addEventListener('submit', function(ev){
   h3.innerText=name;
   section.appendChild(h3);
 
+  // handling date picker
   let date = inputs[1].value;
   let p = document.createElement('P');
   p.innerText ='Born at ' + date;
   section.appendChild(p);
 
+  // handling img uploading
   let img = inputs[2].value;
   console.log(img);
   console.log(img.lastIndexOf('\\'));
@@ -42,6 +45,18 @@ form.addEventListener('submit', function(ev){
   section.appendChild(imgPreview);
 
 
+  // article about person with selected color
+  let articleColor = backgroundColor.value;
+  let article = document.createElement('ARTICLE');
+  article.style.background=articleColor;
+
+  let textArea = tArea.value;
+  article.innerText= textArea;
+
+  section.appendChild(article);
+
+
+  //handling languages checkboxs paragraph
   let p2 = document.createElement('P');
 
 
@@ -63,6 +78,11 @@ form.addEventListener('submit', function(ev){
   // console.log(liInputs);
   //
   // console.log(val);
+
+
+
+  // append the section to the root element-->body
+
 
 
   document.body.appendChild(section);
