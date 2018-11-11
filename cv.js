@@ -41,6 +41,30 @@ form.addEventListener('submit', function(ev){
   imgPreview.src = img2;
   section.appendChild(imgPreview);
 
+
+  let p2 = document.createElement('P');
+
+
+  for(let i=0;i<liInputs.length;i++){
+
+     if(liInputs[i].checked){
+
+
+        p2.innerText = p2.innerText +' '+  liInputs[i].parentElement.innerText;
+
+
+     }
+     section.appendChild(p2);
+  }
+  // let val='';
+  // if (liInputs[0].checked){
+  //    let val = liInputs[0].checked.value;
+  // }
+  // console.log(liInputs);
+  //
+  // console.log(val);
+
+
   document.body.appendChild(section);
 
 })
