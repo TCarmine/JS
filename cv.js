@@ -25,7 +25,8 @@ form.addEventListener('submit', function(ev){
   h3.innerText=name;
   section.appendChild(h3);
 
-  //let close = document.createElement('SPAN');
+  let close = h3.innerHTML;
+
   h3.innerHTML = `<span>X</span>`;
 
   // handling date picker
@@ -60,7 +61,7 @@ form.addEventListener('submit', function(ev){
 
   //handling color for text
   let textCV = textColor.value;
-  document.body.style.color = textCV;
+  section.style.color = textCV;
 
   //handling languages checkboxs paragraph
   let p2 = document.createElement('P');
@@ -89,6 +90,11 @@ form.addEventListener('submit', function(ev){
 
 
   // append the section to the root element-->body
-  document.body.appendChild(section);
 
+  document.body.appendChild(section);
 })
+
+function removeCV() {
+    span.parentNode.removeChild(span);
+    return false;
+}
