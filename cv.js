@@ -92,9 +92,18 @@ form.addEventListener('submit', function(ev){
   // append the section to the root element-->body
 
   document.body.appendChild(section);
-})
 
-function removeCV() {
-    span.parentNode.removeChild(span);
-    return false;
-}
+  let removeCV = function removeCV() {
+      let target = ev.currentTarget,
+      targetParent = target.parentElement;
+      sec = document.querySelector('section');
+
+    sec.removeChild(targetParent);
+
+  }
+
+  h3.addEventListener("click", removeCV(ev));
+
+
+
+})
