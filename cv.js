@@ -4,48 +4,63 @@
 // 1. lastIndexOF
 // 2. substring
 
-let form = document.querySelector('form');
-let inputs = document.querySelectorAll('fieldset > input');
-let tArea = document.querySelector('textarea');
-let liInputs = document.querySelectorAll('li  > input');
-let backgroundColor = document.querySelector('#primaryColor');
-let textColor = document.querySelector('#secondaryColor');
+// let form = document.querySelector('form');
+// const would be ok if are objects or arrays as they are mutable objects
+// the advantage is that they take less space in memory
+// but they would be accessible only in the block
+
+let form = document.querySelector('form'),
+ username = document.querySelector('input[type="text"]'),
+ birthdayDate = document.querySelector('input[type="date"]'),
+ fileUploaded = document.querySelector('input[type="file"]'),
+ tArea = document.querySelector('textarea'),
+ backgroundColor = document.querySelector('#primaryColor'),
+ textColor = document.querySelector('#secondaryColor'),
+// let checkboxsInput = document.querySelectorAll('input[type='checkbox']');
+ liInputs = document.querySelectorAll('li  > input');
+
+// using submit event we don't need to grab the button
+
 
 form.addEventListener('submit', function(ev){
 
-  // preventDefault is necessary for submit event type
+  // preventDefault is necessary for avoid submit event send data to the server
   ev.preventDefault();
   let section = document.createElement('SECTION');
 
   // handling name box
-  let name = inputs[0].value;
+  let userNameCV = username.value;
   let h3 = document.createElement('H3');
 
   h3.style.marginBottom = '2vw';
-  h3.innerText=name;
+
+  // without let would be a global variable
+  let span = document.createElement('SPAN');
+
+  span.innerText = 'X';
+  h3.innerHTML = userNameCV;
+
+  h3.appendChild(span);
+
   section.appendChild(h3);
-
-  let close = h3.innerHTML;
-
-  h3.innerHTML = `<span>X</span>`;
-
+  // h3.innerText=name + h3.innerHTML;
   // handling date picker
-  let date = inputs[1].value;
+  let dateInserted = birthdayDate.value;
   let p = document.createElement('P');
-  p.innerText ='Born at ' + date;
+  p.innerText ='Born at ' +  dateInserted;
   section.appendChild(p);
 
   // handling img uploading
-  let img = inputs[2].value;
-  console.log(img);
-  console.log(img.lastIndexOf('\\'));
-  let index = img.lastIndexOf('\\')+1;
+  let imgUploaded = fileUploaded.value;
+  console.log(imgUploaded);
+  console.log(imgUploaded.lastIndexOf('\\'));
+  let index = imgUploaded.lastIndexOf('\\')+1;
   console.log(index);
-  let img2 = img.slice(index);
-  console.log(img2);
+  let imgUploadedPath = imgUploaded.slice(index);
+  console.log(imgUploadedPath);
 
   let imgPreview = document.createElement('IMG');
-  imgPreview.src = img2;
+  imgPreview.src = imgUploadedPath;
   section.appendChild(imgPreview);
 
 
@@ -66,7 +81,6 @@ form.addEventListener('submit', function(ev){
   //handling languages checkboxs paragraph
   let p2 = document.createElement('P');
 
-
   for(let i=0;i<liInputs.length;i++){
 
      if(liInputs[i].checked){
@@ -86,24 +100,23 @@ form.addEventListener('submit', function(ev){
   //
   // console.log(val);
 
-
-
-
   // append the section to the root element-->body
 
   document.body.appendChild(section);
 
-  let removeCV = function removeCV() {
+  let removeCV = function (ev) {
       let target = ev.currentTarget,
-      targetParent = target.parentElement;
-      sec = document.querySelector('section');
+      targetParent = target.parentElement.parentElement;
+      // sec = document.querySelector('section');
 
-    sec.removeChild(targetParent);
-
+     // would work also with targetParent instead of section
+    document.body.removeChild(section);
   }
 
-  h3.addEventListener("click", removeCV(ev));
+  // let spans = document.querySelectorAll('span');
 
-
-
+  // for(let spansCount = 0; spansCount< spans.length; spansCount++){
+  //    spans[spansCount].addEventListener("click", removeCV);
+  // }
+  span.addEventListener("click", removeCV);
 })
