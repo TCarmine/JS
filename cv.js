@@ -34,7 +34,8 @@ form.addEventListener('submit', function(ev){
 
   h3.style.marginBottom = '2vw';
 
-  section.appendChild(h3);
+  span = document.createElement('SPAN');
+
 
   // without let would be a global variable
   let span = document.createElement('SPAN');
