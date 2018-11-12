@@ -23,16 +23,18 @@ form.addEventListener('submit', function(ev){
 
   h3.style.marginBottom = '2vw';
 
-  span = document.createElement('SPAN');
+  // without let would be a global variable
+  let span = document.createElement('SPAN');
 
 
 
-  section.appendChild(h3);
 
   span.innerText = 'X';
   h3.innerHTML = name;
 
-  h3.appendChild(span); 
+  h3.appendChild(span);
+
+  section.appendChild(h3);
   // h3.innerText=name + h3.innerHTML;
   // handling date picker
   let date = inputs[1].value;
@@ -101,18 +103,19 @@ form.addEventListener('submit', function(ev){
   let removeCV = function (ev) {
       let target = ev.currentTarget,
       targetParent = target.parentElement.parentElement;
-      sec = document.querySelector('section');
+      // sec = document.querySelector('section');
 
-    sec.removeChild(targetParent);
+     // would work also with targetParent instead of section
+    document.body.removeChild(section);
 
   }
 
-  let spans = document.querySelectorAll('span');
+  // let spans = document.querySelectorAll('span');
 
-  for(let spansCount = 0; spansCount< spans.length; spansCount++){
-     spans[spansCount].addEventListener("click", removeCV);
-  }
-
+  // for(let spansCount = 0; spansCount< spans.length; spansCount++){
+  //    spans[spansCount].addEventListener("click", removeCV);
+  // }
+  span.addEventListener("click", removeCV);
 
 
 
