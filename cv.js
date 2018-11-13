@@ -4,12 +4,15 @@
 // 1. lastIndexOF
 // 2. substring
 
-let form = document.querySelector('form');
-let inputs = document.querySelectorAll('fieldset > input');
-let tArea = document.querySelector('textarea');
-let liInputs = document.querySelectorAll('li  > input');
-let backgroundColor = document.querySelector('#primaryColor');
-let textColor = document.querySelector('#secondaryColor');
+let form = document.querySelector('form'),
+ username = document.querySelector('input[type="text"]'),
+ birthdayDate = document.querySelector('input[type="date"]'),
+ fileUploaded = document.querySelector('input[type="file"]'),
+ tArea = document.querySelector('textarea'),
+ backgroundColor = document.querySelector('#primaryColor'),
+ textColor = document.querySelector('#secondaryColor'),
+// let checkboxsInput = document.querySelectorAll('input[type='checkbox']');
+ liInputs = document.querySelectorAll('li  > input');
 
 form.addEventListener('submit', function(ev){
 
@@ -18,15 +21,13 @@ form.addEventListener('submit', function(ev){
   let section = document.createElement('SECTION');
 
   // handling name box
-  let name = inputs[0].value;
+  let name = username.value;
   let h3 = document.createElement('H3');
 
   h3.style.marginBottom = '2vw';
 
   // without let would be a global variable
   let span = document.createElement('SPAN');
-
-
 
 
   span.innerText = 'X';
@@ -37,13 +38,13 @@ form.addEventListener('submit', function(ev){
   section.appendChild(h3);
   // h3.innerText=name + h3.innerHTML;
   // handling date picker
-  let date = inputs[1].value;
+  let date = birthdayDate.value;
   let p = document.createElement('P');
   p.innerText ='Born at ' + date;
   section.appendChild(p);
 
   // handling img uploading
-  let img = inputs[2].value;
+  let img = fileUploaded.value;
   console.log(img);
   console.log(img.lastIndexOf('\\'));
   let index = img.lastIndexOf('\\')+1;
