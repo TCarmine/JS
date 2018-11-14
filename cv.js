@@ -1,8 +1,8 @@
 // string methods
 
-
 // 1. lastIndexOF
 // 2. substring
+// empty string is a false value
 
 // let form = document.querySelector('form');
 // const would be ok if are objects or arrays as they are mutable objects
@@ -74,6 +74,10 @@ form.addEventListener('submit', function(ev){
   section.style.background=sectionColor;
 
   let textArea = tArea.value;
+  console.log(tArea.maxlength);
+  console.log(tArea.value.length);
+
+
   article.innerText= textArea;
 
   section.appendChild(article);
@@ -105,6 +109,11 @@ form.addEventListener('submit', function(ev){
   // console.log(val);
 
   // append the section to the root element-->body
+
+  })
+
+
+
 
   document.body.appendChild(section);
 
