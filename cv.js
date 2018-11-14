@@ -16,107 +16,105 @@ let form = document.querySelector('form'),
 
 form.addEventListener('submit', function(ev){
 
-  // preventDefault is necessary for submit event type
-  ev.preventDefault();
-  let section = document.createElement('SECTION');
+          // preventDefault is necessary for submit event type
+          ev.preventDefault();
+          let section = document.createElement('SECTION');
 
-  // handling name box
-  let name = username.value;
-  let h3 = document.createElement('H3');
+          // handling name box
+          let name = username.value;
+          let h3 = document.createElement('H3');
 
-  h3.style.marginBottom = '2vw';
+          h3.style.marginBottom = '2vw';
 
-  // without let would be a global variable
-  let span = document.createElement('SPAN');
-
-
-  span.innerText = 'X';
-  h3.innerHTML = name;
-
-  h3.appendChild(span);
-
-  section.appendChild(h3);
-  // h3.innerText=name + h3.innerHTML;
-  // handling date picker
-  let date = birthdayDate.value;
-  let p = document.createElement('P');
-  p.innerText ='Born at ' + date;
-  section.appendChild(p);
-
-  // handling img uploading
-  let img = fileUploaded.value;
-  console.log(img);
-  console.log(img.lastIndexOf('\\'));
-  let index = img.lastIndexOf('\\')+1;
-  console.log(index);
-  let img2 = img.slice(index);
-  console.log(img2);
-
-  let imgPreview = document.createElement('IMG');
-  imgPreview.src = img2;
-  section.appendChild(imgPreview);
+          // without let would be a global variable
+          let span = document.createElement('SPAN');
 
 
-  // article about person with selected color for all section
-  let sectionColor = backgroundColor.value;
-  let article = document.createElement('ARTICLE');
-  section.style.background=sectionColor;
+          span.innerText = 'X';
+          h3.innerHTML = name;
 
-  let textArea = tArea.value;
-  article.innerText= textArea;
+          h3.appendChild(span);
 
-  section.appendChild(article);
+          section.appendChild(h3);
+          // h3.innerText=name + h3.innerHTML;
+          // handling date picker
+          let date = birthdayDate.value;
+          let p = document.createElement('P');
+          p.innerText ='Born at ' + date;
+          section.appendChild(p);
 
-  //handling color for text
-  let textCV = textColor.value;
-  section.style.color = textCV;
+          // handling img uploading
+          let img = fileUploaded.value;
+          console.log(img);
+          console.log(index);
+          let img2 = img.slice(index);
+          console.log(img2);
 
-  //handling languages checkboxs paragraph
-  let p2 = document.createElement('P');
-
-
-  for(let i=0;i<liInputs.length;i++){
-
-     if(liInputs[i].checked){
-
-
-        p2.innerText = p2.innerText +' '+  liInputs[i].parentElement.innerText;
+          let imgPreview = document.createElement('IMG');
+          imgPreview.src = img2;
+          section.appendChild(imgPreview);
 
 
-     }
-     section.appendChild(p2);
-  }
-  // let val='';
-  // if (liInputs[0].checked){
-  //    let val = liInputs[0].checked.value;
-  // }
-  // console.log(liInputs);
-  //
-  // console.log(val);
+          // article about person with selected color for all section
+          let sectionColor = backgroundColor.value;
+          let article = document.createElement('ARTICLE');
+          section.style.background=sectionColor;
+
+          let textArea = tArea.value;
+          article.innerText= textArea;
+
+          section.appendChild(article);
+
+          //handling color for text
+          let textCV = textColor.value;
+          section.style.color = textCV;
+
+          //handling languages checkboxs paragraph
+          let p2 = document.createElement('P');
+
+
+          for(let i=0;i<liInputs.length;i++){
+
+             if(liInputs[i].checked){
+
+
+                p2.innerText = p2.innerText +' '+  liInputs[i].parentElement.innerText;
+
+
+             }
+             section.appendChild(p2);
+          }
+          // let val='';
+          // if (liInputs[0].checked){
+          //    let val = liInputs[0].checked.value;
+          // }
+          // console.log(liInputs);
+          //
+          // console.log(val);
 
 
 
 
-  // append the section to the root element-->body
+          // append the section to the root element-->body
 
-  document.body.appendChild(section);
+          document.body.appendChild(section);
 
-  let removeCV = function (ev) {
-      let target = ev.currentTarget,
-      targetParent = target.parentElement.parentElement;
-      // sec = document.querySelector('section');
+          let removeCV = function (ev) {
+              let target = ev.currentTarget,
+              targetParent = target.parentElement.parentElement;
+              // sec = document.querySelector('section');
 
-     // would work also with targetParent instead of section
-    document.body.removeChild(section);
+             // would work also with targetParent instead of section
+            document.body.removeChild(section);
 
-  }
+          }
 
-  // let spans = document.querySelectorAll('span');
+          // let spans = document.querySelectorAll('span');
 
-  // for(let spansCount = 0; spansCount< spans.length; spansCount++){
-  //    spans[spansCount].addEventListener("click", removeCV);
-  // }
-  span.addEventListener("click", removeCV);
+          // for(let spansCount = 0; spansCount< spans.length; spansCount++){
+          //    spans[spansCount].addEventListener("click", removeCV);
+          // }
+          span.addEventListener("click", removeCV);
 
 
 
