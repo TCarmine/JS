@@ -2,6 +2,19 @@ input, textarea {
   margin: 1vw;
 }
 
+input:invalid {
+  border: 0.2vw solid red;
+}
+
+input:invalid+ p.error{
+ display: block;
+}
+
+p.error {
+  display: none;
+  color:red;
+}
+
 textarea {
   width: 45%;
   height: 8vw;
