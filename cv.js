@@ -51,11 +51,13 @@ form.addEventListener('submit', function(ev){
           p.innerText ='Born at ' + date;
           section.appendChild(p);
 
-          // handling img uploading
+          // // handling img uploading
           let img = fileUploaded.value;
           console.log(img);
-          console.log(index);
+
+          let index = img.lastIndexOf('\\');
           let img2 = img.slice(index);
+          console.log(index);
           console.log(img2);
 
           let imgPreview = document.createElement('IMG');
@@ -99,12 +101,6 @@ form.addEventListener('submit', function(ev){
           // console.log(liInputs);
           //
           // console.log(val);
-
-  // append the section to the root element-->body
-
-  })
-
-
 
           // append the section to the root element-->body
 
