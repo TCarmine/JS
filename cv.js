@@ -3,6 +3,7 @@
 
 // 1. lastIndexOF
 // 2. substring
+// empty string is a false value
 
 let form = document.querySelector('form'),
  username = document.querySelector('input[type="text"]'),
@@ -13,6 +14,7 @@ let form = document.querySelector('form'),
  textColor = document.querySelector('#secondaryColor'),
 // let checkboxsInput = document.querySelectorAll('input[type='checkbox']');
  liInputs = document.querySelectorAll('li  > input');
+
 
 form.addEventListener('submit', function(ev){
 
@@ -63,6 +65,10 @@ form.addEventListener('submit', function(ev){
   section.style.background=sectionColor;
 
   let textArea = tArea.value;
+  console.log(tArea.maxlength);
+  console.log(tArea.value.length);
+
+
   article.innerText= textArea;
 
   section.appendChild(article);
@@ -99,6 +105,11 @@ form.addEventListener('submit', function(ev){
 
   // append the section to the root element-->body
 
+  })
+
+
+
+
   document.body.appendChild(section);
 
   let removeCV = function (ev) {
@@ -117,6 +128,8 @@ form.addEventListener('submit', function(ev){
   //    spans[spansCount].addEventListener("click", removeCV);
   // }
   span.addEventListener("click", removeCV);
+
+
 
 
 
