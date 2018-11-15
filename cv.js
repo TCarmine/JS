@@ -22,6 +22,7 @@ let form = document.querySelector('form'),
 // using submit event we don't need to grab the button
 
 
+
 form.addEventListener('submit', function(ev){
 
           // preventDefault is necessary for submit event type
@@ -37,7 +38,6 @@ form.addEventListener('submit', function(ev){
           // without let would be a global variable
           let span = document.createElement('SPAN');
 
-
           span.innerText = 'X';
           h3.innerHTML = name;
 
@@ -48,7 +48,15 @@ form.addEventListener('submit', function(ev){
           // handling date picker
           let date = birthdayDate.value;
           let p = document.createElement('P');
-          p.innerText ='Born at ' + date;
+
+          let today = new Date();
+          let yearNow = today.getFullYear();
+          console.log(yearNow);
+
+          let userBornDate = new Date(date);
+          let yearUser = userBornDate.getFullYear();
+          let userAge = yearNow - yearUser;
+          p.innerText ='I am ' + userAge;
           section.appendChild(p);
 
           // // handling img uploading
