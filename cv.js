@@ -55,7 +55,7 @@ form.addEventListener('submit', function(ev){
           let img = fileUploaded.value;
           console.log(img);
 
-          let index = img.lastIndexOf('\\');
+          let index = img.lastIndexOf('\\')+1;
           let img2 = img.slice(index);
           console.log(index);
           console.log(img2);
@@ -82,18 +82,21 @@ form.addEventListener('submit', function(ev){
           //handling languages checkboxs paragraph
           let p2 = document.createElement('P');
 
+         let checkboxs = [];
 
           for(let i=0;i<liInputs.length;i++){
 
              if(liInputs[i].checked){
-
-
-                p2.innerText = p2.innerText +' '+  liInputs[i].parentElement.innerText;
-
-
+                checkboxs.push(liInputs[i].parentElement.innerText);
              }
-             section.appendChild(p2);
+             //console.log(checkboxs[i]);
+
+
           }
+          let langueges = checkboxs.join(',');
+          console.log(checkboxs);
+          p2.innerText = 'This are the language I do know: '+ langueges;
+          section.appendChild(p2);
           // let val='';
           // if (liInputs[0].checked){
           //    let val = liInputs[0].checked.value;
