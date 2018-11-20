@@ -1,24 +1,32 @@
 
-let form = document.querySelector('form'),
-    textArea = document.querySelector('#social'),
+let textArea = document.querySelector('#social'),
     facebookReg = /\bf(ace)?b(ook)?\b/ig,
-    twitterReg = /\btw(eeter)?\b/ig;
+    twitterReg = /\btw(eeter)?\b/ig,
+    span = document.querySelector('.fb'),
+    span2 = document.querySelector('.tw');
 
 textArea.addEventListener('keyup', function(ev){
 
 let userInput= textArea.value;
 
-let p = document.createElement('PARAGRAPH');
-let p2 = document.createElement('PARAGRAPH');
-document.body.appendChild(p);
-document.body.appendChild(p2);
+      if( facebookReg.test(userInput) ){
+                span.innerHTML =`You have entered Facebook ${userInput.match(facebookReg).length} times`;
+      } //else{
+      //     span.style.display='none';
+      // }
 
-      if( facebookReg.test(userInput)){
-                p.innerText=`You have entered Facebook ${userInput.match(facebookReg).length} times`;
-      }
-      if(twitterReg.test(userInput)){
-                p2.innerText =`You have entered Twitter ${userInput.match(twitterReg).length} times`;
-      }else{
-        console.log('You don\'t like social networks');
-      }
+      if( twitterReg.test(userInput) ){
+                span2.innerHTML =`You have entered Twitter ${userInput.match(twitterReg).length} times`;
+      } //else{
+      //     span2.style.display='none';
+      // }
+
+      // if(userInput==0){
+      //
+      // }
 })
+
+//
+// textArea.addEventListener()
+//
+//   document.body.removeChild(targetParent);
