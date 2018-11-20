@@ -1,0 +1,16 @@
+textarea{
+
+}
+
+span{
+  font-size: 2.5vw;
+  /* display: none; */
+}
+
+#fb{
+ background-color: blue;
+}
+
+#tw{
+ background-color: red;
+}
