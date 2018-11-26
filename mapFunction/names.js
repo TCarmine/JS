@@ -32,26 +32,30 @@ let names = [
 
 
 
-let uniqueElements = (collection=names) => {
+let uniqueElements = (collection = names) => {
  let uniqueNames = [];
-
      for(let name of collection){
-       if(!uniqueNames.includes(collection)){
+       if(!uniqueNames.includes(name)){
           uniqueNames.push(name);
        }
-      return uniqueNames;
-    }
+     }
+     return uniqueNames;
 }
-// let uniqueValues = array => {
-//     array.filter(item,index) =>{
-//       array1.indexOf(item)==index;
-//     }
-// })
 
-// let unique = uniqueValues(names);
+
+// let uniqueValues = array => {
+//     array.filter((item,index) =>{
+//       array1.indexOf(item)==index;
+//     })
+// }
 
 
 let unique =uniqueElements();
+console.log(unique);
+// let unique = uniqueValues(names);
+
+
+
 
 
 // let uniqueNames2 = new Set();
