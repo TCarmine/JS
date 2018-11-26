@@ -9,13 +9,14 @@ let asynChangeName = ( newName , time ) => {
   return promise;
 }
 let names = ['Euron Greyjoy', 'Jamie Lanniester','Night Kings'];
+let times =[5000, 4000, 3000, 2000, 1000];
 let counter = 0;
 
 let makeNewNames = counter => {
   if (counter === names.length){
     return;
   }
-  asynChangeName(names[counter], 3000)
+  asynChangeName(names[counter], times[counter])
       .then( name => {
         givenName = name;
         console.log(givenName);
