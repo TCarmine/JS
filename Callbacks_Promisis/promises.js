@@ -32,7 +32,7 @@ asynChangeName('Danny')
     return asynChangeName('Night Kings');
 
   })
-  // .then( name =>{
-  //   givenName = name;
-  //   console.log(givenName);
-  // })
+  .then( name =>{
+    givenName = name;
+    console.log(givenName);
+  })
