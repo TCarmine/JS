@@ -1,14 +1,17 @@
 let givenName = 'Cersel';
 
 let asynChangeName = ( newName , time ) => {
-  let promise = new Promise((resolve, recject) => {
+  let newPromise = new Promise((resolve, reject) => {
+    if(newName === 'Jon Snow'){
+      reject('This name is not allowed');
+    }
     setTimeout(() => {
       resolve(newName, time);
     }, time);
   })
-  return promise;
+  return newPromise;
 }
-let names = ['Euron Greyjoy', 'Jamie Lanniester','Night Kings'];
+let names = ['Euron Greyjoy','Jon Snow','Jamie Lanniester','Night Kings'];
 let times =[5000, 4000, 3000, 2000, 1000];
 let counter = 0;
 
@@ -22,6 +25,9 @@ let makeNewNames = counter => {
         console.log(givenName);
         counter++;
         makeNewNames(counter);
+      })
+      .catch(errorMessage => {
+        console.warn(errorMessage);
       })
 }
 
