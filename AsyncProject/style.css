@@ -26,3 +26,35 @@ nav li:hover {
   cursor: pointer;
   background: black;
 }
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw;
+}
+
+#container section {
+  width: 30vw;
+  display: block;
+  text-align: center;
+  margin-left: 2vw;
+  margin-top: 2vw;
+  transition: transform 0.5s;
+}
+
+#container section img {
+  width: 100%;
+}
+
+#container section img:hover {
+  transform: scale(1.2);
+  align-items: center;
+}
+
+.active {
+  opacity: 1;
+  transition: opacity 0.9s ease-in;
+  align-items: center;
+}
