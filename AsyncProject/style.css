@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blue;
+}
+
+nav li {
+  display: flex;
+  list-style-type: none;
+  color: white;
+  height: 10vw;
+  padding: 0 5vw;
+  align-items: center;
+}
+
+nav li:first-of-type {
+  font-family: 'Sedgwick Ave', cursive;
+}
+
+nav li:hover {
+  cursor: pointer;
+  background: black;
+}
