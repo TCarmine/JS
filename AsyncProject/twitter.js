@@ -11,7 +11,7 @@ let grap = async dataJson =>{
 
   for(let i=0; i<finalData.length;i++){
       let section = document.createElement('section');
-      arraySections.push(section[i]);
+
       let image = document.createElement('img');
       let h3 = document.createElement('h3');
       let p = document.createElement('p');
@@ -24,18 +24,29 @@ let grap = async dataJson =>{
       section.appendChild(h3);
       section.appendChild(p);
       container.appendChild(section);
+      arraySections.push(section);
+
   }
+    // arraySections= document.querySelectorAll('section');
+    // console.log(arraySections);
 
 }
 
 lis[1].addEventListener('click',(ev)=>{
   let data = 'data.json';
   grap(data);
-})
-
-
-
-arraySections.addEventListener('click', ev =>{
-
 
 })
+
+for(j=0;j<arraySections.length;j++){
+
+        arraySections[0].addEventListener('click', ev =>{
+            let showSection = document.createElement('section');
+            console.log('Hi');
+            showSection.classList.add("showSection");
+            showSection.appendChild(arraySections[j].img);
+            document.body.appendChild(showSection);
+        })
+
+}
+console.log(arraySections);

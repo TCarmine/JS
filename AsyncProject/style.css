@@ -46,16 +46,15 @@ nav li:hover {
   justify-content: space-between;
   margin-right: 2vw;
   margin-top: 2vw;
-  transition: transform 0.5s;
+}
+
+#container section:hover {
+  cursor: pointer;
 }
 
 #container section img {
   width: 100%;
   height: 12vw;
-}
-
-#container section img:hover {
-  transform: scale(1.2);
 }
 
 #container section h3 {
