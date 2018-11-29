@@ -38,7 +38,9 @@ let grap = async dataJson =>{
                     let showSection = document.createElement('section');
                     let imageBig = document.createElement('img');
                     imageBig.src = imgStringPath;
+                    imageBig.classList.add("bigImage");
                     showSection.classList.add("showSection");
+
                     showSection.appendChild(imageBig);
                     document.body.appendChild(showSection);
       })
