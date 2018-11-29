@@ -3,10 +3,25 @@ let container = document.querySelector('#container');
 let arraySections =[];
 
 
+
 let grap = async dataJson =>{
   let res = await fetch(dataJson);
   let finalData = await res.json();
-  console.log(finalData);
+
+  // console.log(finalData);
+  // let secondClick = async () => {
+  //   for(j=0;j<arraySections.length;j++){
+  //
+  //           arraySections[0].addEventListener('click', ev =>{
+  //               let showSection = document.createElement('section');
+  //               console.log('Hi');
+  //               showSection.classList.add("showSection");
+  //               showSection.appendChild(arraySections[j].img);
+  //               document.body.appendChild(showSection);
+  //           })
+  //
+  //   }
+  // })
 
 
   for(let i=0; i<finalData.length;i++){
@@ -19,6 +34,14 @@ let grap = async dataJson =>{
       image.src = imgStringPath;
       h3.innerText = finalData[i].title;
       p.innerText = finalData[i].description;
+      section.addEventListener('click', ev =>{
+                    let showSection = document.createElement('section');
+                    let imageBig = document.createElement('img');
+                    imageBig.src = imgStringPath;
+                    showSection.classList.add("showSection");
+                    showSection.appendChild(imageBig);
+                    document.body.appendChild(showSection);
+      })
 
       section.appendChild(image);
       section.appendChild(h3);
@@ -38,15 +61,6 @@ lis[1].addEventListener('click',(ev)=>{
 
 })
 
-for(j=0;j<arraySections.length;j++){
 
-        arraySections[0].addEventListener('click', ev =>{
-            let showSection = document.createElement('section');
-            console.log('Hi');
-            showSection.classList.add("showSection");
-            showSection.appendChild(arraySections[j].img);
-            document.body.appendChild(showSection);
-        })
 
-}
 console.log(arraySections);
