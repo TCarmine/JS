@@ -8,22 +8,6 @@ let grap = async dataJson =>{
   let res = await fetch(dataJson);
   let finalData = await res.json();
 
-  // console.log(finalData);
-  // let secondClick = async () => {
-  //   for(j=0;j<arraySections.length;j++){
-  //
-  //           arraySections[0].addEventListener('click', ev =>{
-  //               let showSection = document.createElement('section');
-  //               console.log('Hi');
-  //               showSection.classList.add("showSection");
-  //               showSection.appendChild(arraySections[j].img);
-  //               document.body.appendChild(showSection);
-  //           })
-  //
-  //   }
-  // })
-
-
   for(let i=0; i<finalData.length;i++){
       let section = document.createElement('section');
 
@@ -37,11 +21,14 @@ let grap = async dataJson =>{
       section.addEventListener('click', ev =>{
                     let showSection = document.createElement('section');
                     let imageBig = document.createElement('img');
+                    let span = document.createElement('SPAN');
+                    span.innerText='X';
                     imageBig.src = imgStringPath;
                     imageBig.classList.add("bigImage");
+                    span.classList.add("bigImage");
                     showSection.classList.add("showSection");
-
                     showSection.appendChild(imageBig);
+                    showSection.appendChild(span);
                     document.body.appendChild(showSection);
       })
 
@@ -62,7 +49,3 @@ lis[1].addEventListener('click',(ev)=>{
   grap(data);
 
 })
-
-
-
-console.log(arraySections);
