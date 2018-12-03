@@ -1,0 +1,18 @@
+#container {
+  display: flex;
+  margin-top: 2vw;
+}
+
+#container section {
+  border: 0.1vw solid black;
+  padding: 1.5vw 2vw;
+  font-size: 2.5vw;
+  font-family: tahoma;
+  background: deepskyblue;
+  color: black;
+  margin-right: 1vw;
+}
+
+h3 {
+  text-align: center;
+}
