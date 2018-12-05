@@ -4,6 +4,12 @@
 
 $(document).ready(function(ev) {
 
+
+  $('button').on('mouseenter mouseleave', function() {
+    let targetsButton = $(this).attr('id');
+    $(`button > p[id=${targetsButton}]`).addClass('activeButton');
+  });
+
   $('main > aside > li').click(function(ev) {
 
     $('main > aside > li').removeClass('selected');
@@ -15,16 +21,3 @@ $(document).ready(function(ev) {
   })
 
 })
-
-// $(document).ready(function(ev) {
-//
-//  $('main > aside > li').click(function(ev) {
-//
-//    $('main > aside > li').removeClass('selected');
-//    $(this).addClass('selected');
-//
-//    $('section').removeClass('active');
-//    let targetsIdentity = $(this).attr('unique');
-//    $(`section[unique=${targetsIdentity}]`).addClass('active');
-//  })
-// })

@@ -2,6 +2,17 @@ body {
   margin: 0;
 }
 
+button{
+  margin-top:2vw;
+  margin-left: 2vw;
+
+}
+
+button p{
+  display: none;
+
+}
+
 section {
   text-align: center;
   opacity: 0;
@@ -67,4 +78,8 @@ aside li:hover {
 
 .selected {
   background: red;
+}
+
+.activeButton{
+  display: block;
 }
