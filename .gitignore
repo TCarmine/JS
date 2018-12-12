@@ -43,3 +43,6 @@ Thumbs.db
 *.jpg
 *.JPEG
 .images
+
+#Folders
+aboutMe/node_modules
