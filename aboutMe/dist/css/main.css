@@ -12,6 +12,14 @@ body {
     background: url(../img/background.jpg);
     background-attachment: fixed;
     background-size: cover; }
+    body#bg-img .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: rgba(68, 68, 68, 0.5); }
 
 h1,
 h2,
@@ -39,7 +47,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: #1c0bb6; }
 
 main {
   padding: 4rem;
@@ -49,7 +57,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #eece1a;
+        color: #1c0bb6;
         transition: all 0.5s ease-in-out; }
   main#home {
     overflow: hidden; }
