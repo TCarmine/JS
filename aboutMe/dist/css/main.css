@@ -8,6 +8,10 @@ body {
   margin: 0;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.5; }
+  body#bg-img {
+    background: url(../img/ocean.jpg);
+    background-attachment: fixed;
+    background-size: cover; }
 
 h1,
 h2,
@@ -49,3 +53,5 @@ main {
         transition: all 0.5s ease-in-out; }
   main#home {
     overflow: hidden; }
+    main#home h1 {
+      margin-top: 20vh; }
