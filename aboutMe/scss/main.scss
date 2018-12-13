@@ -8,7 +8,7 @@ $background-opacity: 0.9;
   transition: all 0.5s ease-in-out;
 }
 
-@mixin backround {
+@mixin background {
   @if $show-home-image {
     &#bg-img {
       background: $home-image;
@@ -23,7 +23,7 @@ $background-opacity: 0.9;
 }
 
 body {
-  @include backround();
+  @include background();
   background: $primary-color;
   color: #fff;
   height: 100%;
