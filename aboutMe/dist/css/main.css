@@ -9,7 +9,7 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url(../img/ocean.jpg);
+    background: url(../img/background.jpg);
     background-attachment: fixed;
     background-size: cover; }
 
