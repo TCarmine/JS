@@ -64,8 +64,8 @@
     transition: all 0.5s ease-in-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
-    .menu .nav-item.current > a {
-      color: #1c0bb6; }
+      .menu .nav-item.show.a {
+        color: #1c0bb6; }
 
 .nav-link {
   display: inline-block;
