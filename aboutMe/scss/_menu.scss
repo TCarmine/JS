@@ -114,6 +114,9 @@
   font-size: 30px;
   text-transform: uppercase;
   padding: 1 rem 0;
+  font-weight: 300;
+  text-decoration: none;
+  @include easeOut;
 }
 // Delay each nav item slide by 0.1s
 
