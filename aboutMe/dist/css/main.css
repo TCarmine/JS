@@ -59,6 +59,11 @@
       object-fit: contain;
       border-radius: 50%;
       border: solid 3px #1c0bb6; }
+  .menu .nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-in-out; }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
 
 * {
   box-sizing: border-box; }
