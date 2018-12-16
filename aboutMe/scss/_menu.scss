@@ -86,5 +86,14 @@
       //  Slide in from top
       transform: translate3d(0, 0, 0);
     }
+
+    .portrait {
+      width: 280px;
+      height: 280px;
+      background: url(../img/mia_Athens.jpg);
+      object-fit: contain;
+      border-radius: 50%;
+      border: solid 3px $secondary-color;
+    }
   }
 }
