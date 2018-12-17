@@ -6,8 +6,9 @@ $(document).ready(function(ev) {
 
 
   $('button').on('mouseenter mouseleave', function() {
-    let targetsButton = $(this).attr('id');
-    $(`button > p[id=${targetsButton}]`).addClass('activeButton');
+    let targetsButton = $(this).attr('btn');
+
+    $(`button > p[btn=${targetsButton}]`).addClass('activeButton');
   });
 
   $('main > aside > li').click(function(ev) {
