@@ -42,3 +42,11 @@ a:hover {
 .menu > li:last-of-type {
   margin-right: 0;
 }
+
+.features-menu {
+  display: flex;
+  flex-direction: column;
+  background: #b2d6ff;
+  border-radius: 5px;
+  padding-top: 60px;
+}
