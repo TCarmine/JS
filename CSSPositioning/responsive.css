@@ -55,6 +55,12 @@
   order: 2;
 }
 
+/* this is need for svg image in chrome  */
+
+.illustration {
+  width: 100%;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
   body {
