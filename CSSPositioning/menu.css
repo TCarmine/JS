@@ -50,3 +50,15 @@ a:hover {
   border-radius: 5px;
   padding-top: 60px;
 }
+
+.features-menu li {
+  list-style: none;
+  border-bottom: 1px solid #fff;
+
+  padding: 0 40px 10px 20px;
+  margin: 10px;
+}
+
+.features-menu li:last-of-type {
+  border-bottom: none;
+}
