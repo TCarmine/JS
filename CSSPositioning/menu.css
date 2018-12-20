@@ -48,12 +48,18 @@ a:hover {
   position: relative;
 }
 
+/* Hiding the submenu */
 .features-menu {
+  display: none;
+}
+
+.dropdown:hover .features-menu {
   display: flex;
   flex-direction: column;
   background: #b2d6ff;
   border-radius: 5px;
   padding-top: 60px;
+  z-index: 1;
 
   /* making this and the parent relative will be possible position it relative to the parent */
   position: absolute;
@@ -71,4 +77,13 @@ a:hover {
 
 .features-menu li:last-of-type {
   border-bottom: none;
+}
+
+/* making the Freature visibile */
+
+.dropdown > span {
+  z-index: 2;
+  /* without we could not see it */
+  position: relative;
+  cursor: pointer;
 }
