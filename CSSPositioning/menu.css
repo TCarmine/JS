@@ -43,12 +43,22 @@ a:hover {
   margin-right: 0;
 }
 
+/* this make the ul in it able to be moved relative to this((Relatively) Absolute  */
+.dropdown {
+  position: relative;
+}
+
 .features-menu {
   display: flex;
   flex-direction: column;
   background: #b2d6ff;
   border-radius: 5px;
   padding-top: 60px;
+
+  /* making this and the parent relative will be possible position it relative to the parent */
+  position: absolute;
+  top: -25px;
+  left: -30px;
 }
 
 .features-menu li {
