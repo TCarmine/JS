@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 1200px;
+}
+
+.container {
+  display: flex;
+
+  justify-content: center;
+}
+
+.example {
+  display: flex;
+  justify-content: space-around;
+
+  width: 800px;
+  margin: 50px 0;
+  background-color: #52e040;
+}
+
+.item img {
+  display: block;
+}
+
+/*
+“Relative positioning” moves elements around relative to where they would normally appear in the static flow of the page. This is useful for nudging boxes around when the default flow is just a little bit off.
+
+*/
+.item-relative {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+/* the above is equivalent to */
+/* .item-relative {
+  position: relative;
+  bottom: -30px;
+  right: -30px;
+} */
+
+/* .item-relative {
+  position: relative;
+  bottom: 30px;
+  right: 30px;
+} */
+
+/* the above is equivalent to */
+/* .item-relative {
+  position: relative;
+  top: -30px;
+  left: -30px;
+} */
+
+/* 
+“Absolute positioning” is just like relative positioning, but the offset is relative to the entire browser window instead of the original position of the element. Since there’s no longer any relationship with the static flow of the page, consider this the most manual way to lay out an element.
+*/
+
+/*
+(Relatively) Absolute Positioning
+
+Absolute positioning becomes much more practical when it’s relative to some other element that is in the static flow of the page. Fortunately, there’s a way to change the coordinate system of an absolutely positioned element.
+
+*/
+
+.absolute {
+  position: relative;
+}
+
+.item-absolute {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/*
+“Fixed positioning” has a lot in common with absolute positioning: it’s very manual, the element is removed from the normal flow of the page, and the coordinate system is relative to the entire browser window. The key difference is that fixed elements don’t scroll with the rest of the page.
+
+*/
+
+.item-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
