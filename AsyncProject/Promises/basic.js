@@ -1,13 +1,7 @@
-let btn = document.querySelector('button');
+//basic callbacks with setTimeout
 
-btn.addEventListener("click", function(e){
-  console.log("The button was clicked");
-})
+let logCall =  () => {
+  console.log('logCall was called');
+};
 
-// basic callbacks with setTimeout
-
-// let logCall =  () => {
-//   console.log('logCall was called');
-// };
-//
-// setTimeout(logCall, 10000);
+setTimeout(logCall, 10000);
