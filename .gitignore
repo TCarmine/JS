@@ -45,8 +45,11 @@ Thumbs.db
 .images
 
 #Folders
+#nodejs dependencies
 
+**/node_modules
+node_modules/
 aboutMe/node_modules
-webpack_app/node_modules
+webpack_app/node_modules/
 
-webpack/package.json
+webpack_app/package.json
