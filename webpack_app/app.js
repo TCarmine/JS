@@ -1,1 +1,4 @@
-alert(require('./people.js'));
+let people= require('./people.js');
+
+
+console.log(people[2].name);
