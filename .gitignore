@@ -47,6 +47,6 @@ Thumbs.db
 #Folders
 
 aboutMe/node_modules
-webpack/node_modules
+webpack_app/node_modules
 
 webpack/package.json
